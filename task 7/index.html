@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="changeColor">click me</button>
+    <p id="colorcode"></p>
+    <script>
+        function getRandomHexColor() {
+            return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+        }
+
+        document.getElementById('changeColor').addEventListener('click', function() {
+            const randomColor = getRandomHexColor();
+            document.body.style.backgroundColor = randomColor;
+            document.getElementById('colorcode').innerText = randomColor;
+        });
+    </script>
+</body>
+</html>
